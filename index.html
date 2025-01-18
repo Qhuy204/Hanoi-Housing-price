@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Houses Price Prediction</title>
+	<script src="https://esgoo.net/scripts/jquery.js"></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1 style = "font-size: 2.5rem;">Houses Price Prediction</h1>           
+            <a href="#price-calculator" class="btn" style = "margin-top: 50px">Get Started</a>			
+        </div>
+    </header>
+
+    <section class="about">
+        <h1 style = "margin-top: 30px; color: #6ba3be; font-size: 2.5rem;">About Our Project</h1>
+        <div class="project-cards">
+            <div class="card">
+				<div class = "img-prd">
+					<img  src="anh1.jpg" alt="Description of image" class="card-image">
+				</div>
+                <h3>Our Proposal</h3>
+                <p>Cheap house price. Quickly choose a house like that.</p>
+            </div>
+            <div class="card">
+				<div class = "img-prd">
+					<img  src="anh2.jpg" alt="Description of image" class="card-image">
+				</div>				
+                <h3>Finding Our Dataset</h3>
+                <p>We started off with the idea of a project revolving around stock prices. There are a lot of APIs...</p>
+            </div>
+            <div class="card">
+				<div class = "img-prd">
+					<img  src="anh3.jpg" alt="Description of image" class="card-image">
+				</div>				
+                <h3>Dataset Limitations</h3>
+                <p>With regards to the dataset, we were limited to one dataset from only vietnamese.</p>
+            </div>
+        </div>
+    </section>
+	
+	<section class="team">
+    <h2 style = "font-size: 2.5rem; color: #6ba3be">TEAM MEMBER</h2>
+    <div class="team-members">
+        <div class="member">
+            <img src="member1.jpg" alt="Team Member 1" class="team-image">
+            <h3>Trương Quốc Huy</h3>
+        </div>
+        <div class="member">
+            <img src="member2.jpg" alt="Team Member 2" class="team-image">
+            <h3>Đào Văn Thuận</h3>
+        </div>
+    </div>
+	</section>
+	
+	<section class="our-process">
+        <h1>OUR PROCESS</h1>
+        <div class="process-container">
+            <div class="process-item">
+                <img src="house-icon.png" alt="Plane Icon">
+                <h2>ETL Process</h2>
+                <p>CSV Files from Kaggle were loaded and merged into Python via Jupyter Notebook.</p>
+            </div>
+            <div class="process-item">
+                <img src="house-icon.png" alt="Plane Icon">
+                <h2>Database</h2>
+                <p>The data was normalized, cleaned, and then inserted into PostgreSQL from Jupyter Notebook.</p>
+            </div>
+            <div class="process-item">
+                <img src="house-icon.png" alt="Plane Icon">
+                <h2>Flask API</h2>
+                <p>This tool was set up in order to connect the data to the site to calculate the flight prices.</p>
+            </div>
+            <div class="process-item">
+                <img src="house-icon.png" alt="Plane Icon">
+                <h2>Tableau</h2>
+                <p>Using Tableau, visualizations were created to provide further insight into the Kaggle dataset.</p>
+            </div>
+			<div class="process-item">
+                <img src="house-icon.png" alt="Plane Icon">
+                <h2>Website Design</h2>
+                <p>By utilizing tools like boostrap, Google fonts, and Coolors, this site was created based on a template from BootstrapMade.</p>
+            </div>
+            <div class="process-item">
+                <img src="house-icon.png" alt="Plane Icon">
+                <h2>JavaScript</h2>
+                <p>Functionality of the button heavily relies on JavaScript in order to initiate the calculation on the backend and display the results on the frontend.</p>
+            </div>
+            <div class="process-item">
+                <img src="house-icon.png" alt="Plane Icon">
+                <h2>Machine Learning</h2>
+                <p>Database was queried from PostgreSQL into a tailor-made pandas dataframe for the KNN Regression Model in order to create a price predictor.</p>
+            </div>
+        </div>
+    </section>
+	
+	<section class="visualizations">
+        <h1>VISUALIZATIONS</h1>
+        <div class="chart-container">
+            <div class="chart-item">
+                <img src="char1.jpeg" alt="Chart 1" onclick="showImage('char1.jpeg')">
+            </div>
+            <div class="chart-item">
+                <img src="char2.png" alt="Chart 2" onclick="showImage('char2.png')">
+            </div>
+            <div class="chart-item">
+                <img src="char3.png" alt="Chart 3" onclick="showImage('char3.png')">
+            </div>
+            <div class="chart-item">
+                <img src="char4.png" alt="Chart 4" onclick="showImage('char4.png')">
+            </div>
+            <div class="chart-item">
+                <img src="char5.png" alt="Chart 5" onclick="showImage('char5.png')">
+            </div>
+            <div class="chart-item">
+                <img src="char6.png" alt="Chart 6" onclick="showImage('char6.png')">
+            </div>
+			<div class="chart-item">
+                <img src="char7.png" alt="Chart 6" onclick="showImage('char7.png')">
+            </div>
+			<div class="chart-item">
+                <img src="char8.png" alt="Chart 6" onclick="showImage('char8.png')">
+            </div>
+        </div>
+		
+		<div class="modal" id="imageModal">
+			<span class="close" onclick="closeModal()">&times;</span>
+			<div class="modal-layout">
+				<img class="modal-content" id="modalImage">
+				<div id="info" class="info"></div> <!-- Hiển thị thông tin thêm -->
+			</div>
+		</div>
+    </section>
+	
+	
+    <section id="price-calculator" class="price-calculator">
+        <h1>House Price Prediction</h1>
+		<p class="disclaimer">
+            <strong>Disclaimer:</strong> This functionality requires Flask App to be running. Please download necessary files 
+            <a href="#">here</a> and run the Flask App to view the function of this button.
+        </p>
+        <div class = "model-selector">
+            <label for="model">Select Model:</label>
+            <select id="model" name="model" class="custom-select">
+                <option value="st">Stacking Model</option>
+                <option value="rf">Random Forest</option>
+                <option value="gb">Gradient Boosting</option>
+            </select>
+        </div>
+		<div class="calculator-form">
+			<form id="property-form">
+				<div class="dropdowns">
+					<div class="form-group">
+						<label for="Area">Diện Tích:</label>
+						<input type="text" id="Area" name="Area" required>
+					</div>
+					<div class="form-group">
+						<label for="Bedrooms">Phòng Ngủ:</label>
+						<input type="number" id="Bedrooms" name="Bedrooms" required>
+					</div>
+					<div class="form-group">
+						<label for="Bathrooms">Phòng Tắm:</label>
+						<input type="number" id="Bathrooms" name="Bathrooms" required>
+					</div>
+				
+					
+					<div class="form-group">
+						<label for="District">Quận Huyện:</label>
+						<select id="District" name="District" title="Chọn Quận Huyện" class="custom-select">
+							<option value="0"></option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="Commune">Phường Xã:</label>
+						<select id="Commune" name="Commune" title="Chọn Tỉnh Thành" class="custom-select">
+							<option value="0"></option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="PostType">Loại tin:</label>
+						<input type="text" id="PostType" name="PostType" required>
+					</div>
+					<div class="form-group">
+						<label for="Direction">Hướng:</label>
+						<input type="text" id="Direction" name="Direction" required>
+					</div>
+					<div class="form-group">
+						<label for="Legal">Pháp lý:</label>
+						<input type="text" id="Legal" name="Legal" required>
+					</div>
+					<div class="form-group">
+						<label for="Interior">Nội Thất:</label>
+						<input type="text" id="Interior" name="Interior" required>
+					</div>
+					<div class="form-group">
+						<label for="Width">Chiều rộng mặt tiền:</label>
+						<input type="text" id="Width" name="Width" required>
+					</div>
+					<div class="form-group">
+						<label for="Floors">Số Tầng:</label>
+						<input type="number" id="Floors" name="Floors" required>
+					</div>		
+                    <div class="form-group">
+						<label for="Floors">Chiều rộng đường vào nhà:</label>
+						<input type="number" id="Entrancewidth" name="Entrancewidth" required>
+					</div>					
+				</div>
+				<button type="button" class = "calculate-btn" id="calculate-btn">Calculate Price</button>
+			</form>
+		</div>
+		<h2 class="ticket-price">Predicted Price: <span id="ticket-price"></span></h2>
+    </section>
+
+    <script>
+        let selectedDistrict = '';
+        let selectedCommune = '';
+
+        // Lắng nghe sự kiện thay đổi District
+        $("#District").change(function() {
+            var districtName = $("#District option:selected").text(); // Lấy tên District
+            selectedDistrict = districtName; // Lưu tên District
+        });
+
+        // Lắng nghe sự kiện thay đổi Commune
+        $("#Commune").change(function() {
+            var communeName = $("#Commune option:selected").text(); // Lấy tên Commune
+            selectedCommune = communeName; // Lưu tên Commune
+        });
+        
+        document.getElementById('calculate-btn').addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn trang reload
+
+            // Collect form data
+            const formData = {
+                'model': document.getElementById('model').value,
+                'Area': document.getElementById('Area').value,
+                'Bedrooms': document.getElementById('Bedrooms').value,
+                'Bathrooms': document.getElementById('Bathrooms').value,
+                'Commune': selectedCommune, // Sử dụng tên Commune thay vì ID
+                'PostType': document.getElementById('PostType').value,
+                'District': selectedDistrict, // Sử dụng tên District thay vì ID
+                'Direction': document.getElementById('Direction').value,
+                'Legal': document.getElementById('Legal').value,
+                'Interior': document.getElementById('Interior').value,
+                'Width': document.getElementById('Width').value,
+                'Floors': document.getElementById('Floors').value,
+                'Entrancewidth': document.getElementById('Entrancewidth').value
+            };
+
+            for (let key in formData) {
+                if (!formData[key]) {
+                    alert(`Missing value for ${key}`);
+                    return;  // Dừng việc gửi nếu có trường thiếu
+                }
+            }
+
+            const controller = new AbortController();
+            const signal = controller.signal;
+
+            // Set timeout (5 seconds)
+            setTimeout(() => controller.abort(), 5000);
+
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData),
+                mode: 'cors',
+                signal: signal
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                if (!response.ok) { // Kiểm tra xem mã trạng thái có phải là 200-299 không
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json(); // Chắc chắn rằng response là JSON hợp lệ
+            })
+            .then(data => {
+                console.log('Parsed data:', data);
+                const priceInMillions = data.prediction;
+                const formattedPrice = `${priceInMillions.toFixed(2)} Triệu/m²`;
+                document.getElementById('ticket-price').textContent = formattedPrice;
+                alert(`Predicted price: ${formattedPrice}`);
+            })
+            .catch(error => {
+                console.error('Error details:', {
+                    message: error.message,
+                    name: error.name,
+                    stack: error.stack
+                });
+                alert('Có lỗi khi tính toán giá. Vui lòng thử lại.');
+            });
+        });
+
+
+
+        
+		// Định nghĩa thông tin cho từng ảnh
+		const images = {
+			"char1.jpeg": "Đồ thị thể hiện kết quả của phân tích hồi quy tuyến tính (linear regression) trong Python, mô tả mối quan hệ giữa giá nhà và diện tích.",
+			"char2.png": "Đồ thị này giúp người xem hiểu rõ hơn về sự phân bố của giá, bao gồm các đỉnh và độ phân tán của dữ liệu.",
+			"char3.png": "Đồ thị này giúp trực quan hóa phân phối giá bất động sản theo từng quận, cho phép người xem nhanh chóng nhận diện các đặc điểm chính của dữ liệu, như giá trị trung bình, độ phân tán và các giá trị ngoại lệ trong từng quận.",
+			"char4.png": "Đồ thị này giúp trực quan hóa số lượng quan sát của mỗi quận trong tập dữ liệu. Biểu đồ cột cho phép người xem nhanh chóng nhận diện sự phân bố và tần suất của từng quận, giúp đánh giá mức độ phổ biến hoặc số lượng dữ liệu liên quan đến từng khu vực.",
+			"char5.png": "Đồ thị này giúp trực quan hóa giá bán trung bình của bất động sản theo từng quận/huyện. Biểu đồ cột cho phép người xem nhanh chóng nhận diện mức giá của từng khu vực, từ đó hỗ trợ cho việc phân tích thị trường và đưa ra quyết định đầu tư.",
+			"char6.png": "Đồ thị này giúp trực quan hóa giá bán trung bình của bất động sản theo từng quận/huyện, cho phép người xem dễ dàng nhận diện sự khác biệt về giá giữa các khu vực. Biểu đồ này rất hữu ích cho việc phân tích thị trường bất động sản và đưa ra quyết định đầu tư.",
+			"char7.png": "Đồ Thị này giúp trực quan hóa giá bán trung bình của bất động sản theo từng xã trong quận Nam Từ Liêm. Biểu đồ cột cho phép người xem dễ dàng nhận diện sự khác biệt về giá giữa các xã trong quận, hỗ trợ cho việc phân tích chi tiết và đưa ra quyết định đầu tư.",
+			"char8.png": "Biểu đồ này giúp đánh giá hiệu suất của mô hình dự đoán bằng cách so sánh giá trị thực tế với giá trị mà mô hình đã dự đoán. Sự phân bố của các điểm dữ liệu cho phép người xem nhanh chóng nhận diện mức độ chính xác của mô hình và các vấn đề tiềm ẩn như giá trị ngoại lệ.",
+		};
+
+		// Hàm hiển thị modal
+		function showImage(imageSrc) {
+			const modal = document.getElementById("imageModal");
+			const modalImage = document.getElementById("modalImage");
+			const info = document.getElementById("info");
+
+			modal.style.display = "flex"; // Đảm bảo modal sử dụng flexbox
+			modalImage.src = imageSrc; // Cập nhật ảnh
+			info.innerHTML = images[imageSrc] || "Không có thông tin cho ảnh này."; // Cập nhật thông tin
+		}
+
+		// Hàm đóng modal
+		function closeModal() {
+			const modal = document.getElementById("imageModal");
+			modal.style.display = "none";
+		}
+		
+		//Api tỉnh thành
+		$(document).ready(function() {
+            // Lấy tỉnh thành
+            $.getJSON('https://esgoo.net/api-tinhthanh/1/0.htm', function(data_Conscious) {
+                if (data_Conscious.error == 0) {
+                    $.each(data_Conscious.data, function(key_Conscious, val_Conscious) {
+                        $("#Conscious").append('<option value="' + val_Conscious.id + '">' + val_Conscious.full_name + '</option>');
+                    });
+
+                    // Thiết lập mặc định Tỉnh là Hà Nội
+                    var defaultConsciousId = "01"; // ID của Hà Nội (thay "1" bằng ID chính xác của Hà Nội)
+                    $("#Conscious").val(defaultConsciousId).trigger('change');
+
+                    var idConscious = $(defaultConsciousId).val();
+                    // Lấy quận huyện
+                    $.getJSON('https://esgoo.net/api-tinhthanh/2/' + defaultConsciousId + '.htm', function(data_District) {
+                        if (data_District.error == 0) {
+                            $("#District").html('<option value="0">Quận Huyện</option>');
+                            $("#Commune").html('<option value="0">Phường Xã</option>');
+                            $.each(data_District.data, function(key_District, val_District) {
+                                $("#District").append('<option value="' + val_District.id + '">' + val_District.full_name + '</option>');
+                            });
+
+                            // Lấy phường xã  
+                            $("#District").change(function(e) {
+                                var idDistrict = $(this).val();
+                                $.getJSON('https://esgoo.net/api-tinhthanh/3/' + idDistrict + '.htm', function(data_Commune) {
+                                    if (data_Commune.error == 0) {
+                                        $("#Commune").html('<option value="0">Phường Xã</option>');
+                                        $.each(data_Commune.data, function(key_Commune, val_Commune) {
+                                            $("#Commune").append('<option value="' + val_Commune.id + '">' + val_Commune.full_name + '</option>');
+                                        });
+                                    }
+                                });
+                            });
+
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>       
+
+    <footer class="footer">
+        <p>© Copyright <strong>Plato</strong>. All Rights Reserved</p>
+        <p>Design by <a href="#">Đào Văn Thuận</a></p>
+        <p>Phone: <a href="#">0332259670</a></p>
+		<p>Address: <a href="#">Đại Hưng- Khoái Châu- Hưng Yên</a></p>
+    </footer>
+
+
+</body>
+</html>

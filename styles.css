@@ -1,0 +1,405 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background-image: url('title.webp'); /* Thay đổi URL thành ảnh của bạn */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    margin-bottom: 20px; /* Khoảng cách giữa h1 và p */
+}
+
+.hero p {
+    margin-top: 20px; /* Khoảng cách phía trên của p (nếu cần) */
+}
+
+.container {
+    max-width: 1000px;
+    padding: 200px 200px;	
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.about {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+	background-color: #E0FFFF;
+}
+
+.img-prd:hover{
+    transform: scale(1.1);
+    opacity: 1;
+  } 
+
+.project-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;	
+}
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 28%;
+	border-radius: 20px;
+}
+
+.card-image {
+    width: 350px; /* Đặt chiều rộng ảnh bằng với chiều rộng của card */
+    height: 300px; /* Giữ tỉ lệ khung hình */
+    margin-bottom: 10px; /* Khoảng cách giữa ảnh và tiêu đề */
+	border-radius: 10px;
+}
+
+.team {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.team img{
+    border-radius: 10%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #8fc7ff;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+	border-radius: 10px;
+}
+
+.member {
+    margin: 20px;
+    text-align: center;
+}
+
+.team-image {
+    width: 300px; /* Điều chỉnh kích thước ảnh */
+    height: 300px; /* Điều chỉnh kích thước ảnh */
+    
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4faff;
+    color: #333;
+    text-align: center;
+}
+
+.our-process {
+    padding: 40px 20px;
+}
+
+.our-process h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8fc7ff;
+    margin-bottom: 30px;
+}
+
+.process-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.process-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.process-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.process-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.process-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4faff;
+    color: #333;
+    text-align: center;
+}
+
+.visualizations {
+    padding: 40px 20px;
+}
+
+.visualizations h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8fc7ff;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.chart-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	
+}
+
+.chart-item img {
+    width: 90%; /* Chiếm toàn bộ chiều rộng của khung hình */
+    height: 90%; /* Chiếm toàn bộ chiều cao của khung hình */
+    object-fit: cover; /* Giữ tỷ lệ và cắt hình ảnh nếu cần */
+    border-radius: 5px;
+}
+
+.chart-item:hover{
+    transform: scale(1.1);
+    opacity: 1;
+  } 
+
+.price-calculator {
+    padding: 40px 20px;
+}
+
+.price-calculator h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8fc7ff;
+    margin-bottom: 10px;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.disclaimer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.disclaimer a:hover {
+    text-decoration: underline;
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.dropdowns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Tăng khoảng cách giữa các phần tử */
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group label {
+    margin-bottom: 5px; /* Khoảng cách giữa label và input */
+}
+
+.dropdowns input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #8fc7ff;
+    color: white;
+    outline: none;
+    cursor: text;
+    width: 200px; /* Chiều rộng cố định cho các input */
+}
+
+.calculate-btn {
+    background-color: #8fc7ff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	margin-top: 15px;
+}
+
+.calculate-btn:hover {
+    background-color: #007bff;
+}
+
+.ticket-price {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #f4faff;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Test */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+#imageModal {
+    display: none; /* Ẩn đối tượng khi trang được tải */
+}
+
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: 0;
+    width: 50%; /* Chiếm 50% màn hình */
+    max-width: 600px;
+    height: auto;
+}
+
+.info {
+    color: white;
+    margin-left: 20px;
+    max-width: 30%; /* Giới hạn chiều rộng chữ */
+    text-align: left;
+}
+
+.modal-layout {
+    display: flex;
+    flex-direction: row; /* Sắp xếp ngang */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa ảnh và chữ */
+}
+
+
+.custom-select {
+    background-color: #8fc7ff; /* Màu nền giống như "Xã" */
+    border: 1px solid #007bff; /* Đường viền giống như "Xã" */
+    border-radius: 5px; /* Tạo góc bo tròn */
+    padding: 10px; /* Khoảng cách bên trong */
+    width: 200px; /* Chiều rộng 100% */
+    font-size: 16px; /* Kích thước chữ */
+}
